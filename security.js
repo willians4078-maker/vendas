@@ -1,15 +1,17 @@
-// Bloqueia o clique direito do mouse
+/* 1. PROTEÇÃO CONTRA IFRAMES (Substitui o frame-ancestors que falhou) */
+if (top !== self) {
+    top.location.replace(self.location.href);
+}
+/* 2. BLOQUEIOS DE INTERAÇÃO */
 document.addEventListener('contextmenu', event => event.preventDefault());
 
-// Bloqueia atalhos de teclado (F12, Ctrl+Shift+I, Ctrl+U)
+// Bloqueia F12, Ctrl+Shift+I, Ctrl+U, etc.
 document.onkeydown = function(e) {
-    if (e.keyCode == 123) { return false; } // F12
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) { return false; } // Inspect
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) { return false; } // Element
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) { return false; } // Console
-    if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) { return false; } // View Source
+    if (e.keyCode == 123 || 
+        (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0))) || 
+        (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0))) {
+        return false;
+    }
 };
-
-// Mensagem no console para desencorajar curiosos
-console.log("%c Atenção! ", "color: red; font-size: 30px; font-weight: bold;");
-console.log("Este site está protegido. As ações foram monitoradas.");
+/* 3. AVISO NO CONSOLE */
+console.log("%c Segurança Ativada ", "background: red; color: white; font-size: 20px; padding: 5px;");
