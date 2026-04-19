@@ -15,3 +15,23 @@ document.onkeydown = function(e) {
 };
 /* 3. AVISO NO CONSOLE */
 console.log("%c Segurança Ativada ", "background: red; color: white; font-size: 20px; padding: 5px;");
+
+<script>
+        document.getElementById('searchInput').addEventListener('keyup', function() {
+            // Pega o que foi digitado e transforma em letras minúsculas
+            let termoPesquisa = this.value.toLowerCase();
+            // Pega todos os cards de produtos
+            let produtos = document.querySelectorAll('.link-card');
+
+            // Passa por cada produto verificando se o nome bate com a pesquisa
+            produtos.forEach(function(produto) {
+                let titulo = produto.querySelector('.title').textContent.toLowerCase();
+                
+                if (titulo.includes(termoPesquisa)) {
+                    produto.style.display = 'flex'; // Mostra se bater
+                } else {
+                    produto.style.display = 'none'; // Esconde se não bater
+                }
+            });
+        });
+</script>
