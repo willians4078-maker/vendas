@@ -52,25 +52,30 @@ header p {
 }
 
 /* Barra de Pesquisa */
+/* Barra de Pesquisa Estilizada */
 .search-box {
-    background: #1e293b;
+    background: #1e293b; /* Mesma cor dos cards */
     border: 1px solid #334155;
-    border-radius: 12px;
-    padding: 12px 15px;
+    border-radius: 50px; /* Deixa ela bem arredondada e moderna */
+    padding: 10px 20px;
     display: flex;
     align-items: center;
-    margin-bottom: 25px;
-    transition: border-color 0.2s;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Quando você clica para digitar */
 .search-box:focus-within {
     border-color: #38bdf8;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
+    transform: scale(1.02);
 }
 
 .search-box i {
-    color: #64748b;
+    color: #38bdf8; /* Lupa azul para combinar com o ícone do topo */
     margin-right: 12px;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .search-box input {
@@ -79,11 +84,13 @@ header p {
     color: #f8fafc;
     width: 100%;
     font-size: 1rem;
-    outline: none;
+    outline: none; /* Remove aquela borda azul feia do navegador */
 }
 
+/* Cor do texto de exemplo (placeholder) */
 .search-box input::placeholder {
     color: #64748b;
+    font-style: italic;
 }
 
 /* Container de Links */
