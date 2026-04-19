@@ -24,7 +24,7 @@ body {
 
 /* Header */
 header {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .profile-img {
@@ -49,6 +49,41 @@ header h1 {
 header p {
     font-size: 0.9rem;
     color: #94a3b8;
+}
+
+/* Barra de Pesquisa */
+.search-box {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 12px 15px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    transition: border-color 0.2s;
+}
+
+.search-box:focus-within {
+    border-color: #38bdf8;
+}
+
+.search-box i {
+    color: #64748b;
+    margin-right: 12px;
+    font-size: 1.1rem;
+}
+
+.search-box input {
+    background: transparent;
+    border: none;
+    color: #f8fafc;
+    width: 100%;
+    font-size: 1rem;
+    outline: none;
+}
+
+.search-box input::placeholder {
+    color: #64748b;
 }
 
 /* Container de Links */
@@ -103,26 +138,6 @@ header p {
 .external {
     font-size: 0.8rem;
     color: #64748b;
-}
-
-/* Botão de Contato */
-.btn-contact {
-    margin-top: 10px;
-    background: #25d366;
-    color: white;
-    padding: 15px;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    transition: opacity 0.2s;
-}
-
-.btn-contact:hover {
-    opacity: 0.9;
 }
 
 /* Footer */
